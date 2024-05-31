@@ -5,11 +5,12 @@ import { useRouter, useSearchParams } from 'next/navigation';
 import Form from '@components/Form';
 
 
-const updatePrompt = () => {
+const UpdatePrompt = () => {
     const Router = useRouter();
     const [submitting, setSubmitting] = useState(false);
     const searchParams = useSearchParams();
     const promptId = searchParams.get('id');
+    console.log(promptId);
     const [post, setPost] = useState({
         prompt: '',
         tag: '',
@@ -68,7 +69,7 @@ const updatePrompt = () => {
 
 const EditPrompt = () => {
   return <Suspense>
-      <updatePrompt />
+      <UpdatePrompt />
   </Suspense>
 }
 
